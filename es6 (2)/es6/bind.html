@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Bind example</h2>
+    <script>
+      var empdetails={
+              fname:'sumit',
+              lname:'joshi',
+              getFullName:function(){
+                 return this.fname+' '+this.lname
+              }
+          }
+          var detailName=function(){
+             console.log(this.getFullName()+' I choose you!')
+          }
+          var alldetails=detailName.bind(empdetails);
+          alldetails();
+       
+    </script>
+</body>
+
+</html>

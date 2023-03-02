@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Dom Implementation</title>
+    </head>
+    <body>
+        <h2> Validation</h2>
+        Name : <input type="text" id="name"/>
+           <button id="btn">Click Here</button>
+        <script>
+             var btn=document.getElementById("btn");
+             btn.addEventListener("click",function(){
+                var regName=/^[a-zA-Z ]+$/;
+                var name=document.getElementById("name").value;
+                    if(regName.test(name))
+                       {
+                        alert("Match")
+                       }
+                    else {
+                        alert("Not match")
+                    }
+             })
+        </script>
+    </body>
+</html>

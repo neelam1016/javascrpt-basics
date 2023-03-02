@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Call-Apply example</h2>
+    <script>
+      var empdetails={
+              fname:'sumit',
+              lname:'joshi',
+              getFullName:function(){
+                 return this.fname+' '+this.lname
+              }
+          }
+          var detailName=function(a,b){
+             console.log(this.getFullName()+' loves'+a+' and '+b)
+          }
+          detailName.call(empdetails,'x','y');
+          detailName.apply(empdetails,['c','d']);
+       
+    </script>
+</body>
+
+</html>

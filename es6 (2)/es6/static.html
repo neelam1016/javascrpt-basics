@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Static method example</h2>
+    <script>
+        class Person {
+            constructor() {
+                this.name = "anuj";
+            }
+            getName() {
+                return this.name;
+            }
+            static details() {
+                console.log("Static Method Call")
+            }
+        }
+         Person.details();
+        const obj = new Person();
+        console.log(obj.getName());
+       // obj.details();//cant access static methods with object
+    </script>
+</body>
+
+</html>

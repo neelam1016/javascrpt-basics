@@ -1,0 +1,56 @@
+--> Object :- It is a collection of key/value pairs or properties.we can store the properties and methods.
+   -> Object Literal
+      syntex :
+      var objname={
+         key:value,
+         key:value,...
+      }
+      eg.
+      var obj={
+        fname:'sumit',
+        lname:'joshi',
+     fullname:function(){
+         return fname+" "+lname;
+        }
+      }
+      //read 
+      console.log(obj.fname);
+      console.log(obj.fullname());
+      //delete 
+      delete obj.fullname;
+      console.log(obj)
+
+      -> Constructor function :- 
+        function Person(fname,lname){
+            this.fname=fname;
+            this.lname=lname;
+        }
+        var person=new Person('sumit','joshi');
+        console.log(person.fname);
+        console.log(person.lname);
+    -> Prototype :- object can inherit features from one another via prototypes.Every object has its own property called prototype.We can add properties and method later on with the help of prototype keyword.
+    -> Module Pattern (IIFE) (Immediately invoke function expression)
+       (function(){
+        ---
+       })()
+    -> Hoisting :- It is an inbuild behavior of javascript where variable and function are move at the top of the program before code execution.
+      -> Variable Hoisting 
+      -> Function Hoisting 
+
+    -> Es 6 
+     let , const , template literal , arrow function , spread , rest , map , filter , reduce ,
+     call, bind , apply , oops concepts 
+
+     -> Entire registration page with proper design and proper validation message at right hand side of the textbox with red color 
+
+       Email (proper email)
+       Password (min 8 , max 24 ,(alphabates,number,special symbol))
+       Full Name (alphabates and space)
+       Uname (alphabates (min 6 , max 12))
+       Gender required
+       Hobbies required
+       City required
+       Age  number
+       Mobile 10 digit 
+       Remarks alphabates and space (min 20)
+           Submit 

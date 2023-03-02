@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Inheritance example</h2>
+    <script>
+        class A {
+               abc(){
+                  return "sumit";
+               }
+           }
+           class B extends A {
+             bca(){
+               let x="amit";
+               let y=super.abc();//sumit 
+               console.log(`${x} and ${y} are good friends`);
+             }
+           }
+           const obj=new B();
+           obj.bca();
+    </script>
+</body>
+
+</html>

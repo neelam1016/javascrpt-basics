@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Filter example</h2>
+    <script>
+        let arr1 = [2, 3, 4, 5, 6, 7, 8, 9];
+        let filArr = arr1.filter(val => val % 2 == 0);//2 4 6 8
+        console.log(filArr)
+        let arr = [
+            { id: 1, name: 'anuj', salary: 45678 },
+            { id: 2, name: 'anil', salary: 55678 },
+            { id: 3, name: 'sunil', salary: 65678 }
+        ]
+        let empIds = arr.filter(emp => emp.id);
+        console.log(empIds)
+        let empDetails = arr.filter(emp => emp.salary > 50000)
+        console.log(empDetails)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Object Example</h2>
+        <script>
+             var obj={
+        fname:'sumit',
+        lname:'joshi',
+     fullname:function(){
+         return this.fname+" "+this.lname;
+        }
+      }
+      //read 
+      console.log(obj.fname);
+      console.log(obj.fullname());
+      //delete 
+      delete obj.fullname;
+      console.log(obj)
+        </script>
+    </body>
+</html>

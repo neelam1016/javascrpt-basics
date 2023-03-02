@@ -1,0 +1,185 @@
+--> Es 6 features 
+   ---> let keyword (blocked scope) :- we can define local variables with in a scope (condition , loop , array , function)
+   eg:
+     for(let i=1;i<=5;i++){
+        console.log(i);
+     }
+     console.log(i);// i is not defined
+     let x=10;
+     let x=20;// cant be redeclare 
+     x=20;
+  --> const keyword :- to define constant (read only | fixed value)
+    const API_URL="http://www.abc.com/api";
+
+  --> Template Literal :- within backtrick `` symbol we can reder string as well as a variable.
+     eg:
+       let x=20;
+       let y=10;
+       let sum=x+y;
+       //old way 
+       console.log("The sum of "+x+" and "+y+" is "+sum);
+       //Template Literal 
+       console.log(`The sum of ${x} and ${y} is ${sum}`)
+    --> Arrow function (=>) : sort and concise code 
+      -> single line 
+      let add=(a,b)=> (a+b);
+      -> multiple line 
+      let result=(par)=>{
+         //define logic 
+         return data;
+      }
+    -> ** Spread Operator :- (...) to spread or copy array and object in new array and object.
+      eg:
+       let arr=[2,3,4,5,6];
+       let newArr=[...arr,7,8];// 2 3 4 5 6 7 8
+       let obj={name:'anuj',age:34}
+       let newObject={...obj,name:'anil',city:'noida'}
+    -> rest parameter (...) :- we can pass n number of arguments in a function. But limitation is that rest parameter is the last formal parameter of the functions.
+    -> map | reduce | filter 
+    -> map() :- It is used for creating a new array from an existing one , applying a function to each one of the elements of the first array.
+      eg:
+      let arr=[2,3,4,5,6];
+      let newArray=arr.map(val=> val*2);// 4 6 8 10 12 
+    -> filter() :- It takes each elemnt in an array and it applies a conditional statements against it.
+     let arr=[2,3,4,5,6,7,8,9];
+     let filArr=arr.filter(val=> val%2==0);//2 4 6 8
+     let arr=[
+        {id:1,name:'anuj',salary:45678},
+        {id:2,name:'anil',salary:55678},
+        {id:3,name:'sunil',salary:65678}
+     ]
+     let empIds=arr.filter(emp=> emp.id);
+     let empDetails=arr.filter(emp=> emp.salary>50000)
+     -> reduce() :- return single value. It reduces an array of values down to just one value.
+
+     eg:
+       const numbers=[1,2,3,4,5];
+       const sum=numbers.reduce((result,item)=>{
+          return result+item;
+       },0)
+       console.log(sum)
+    -> OOps features :- memory management and reusability 
+    class , object , constructor 
+    class Car{
+        constructor(){
+            this.speed=50;
+        }
+        acc(){
+            this.speed+=70;
+        }
+        checkspeed(){
+            console.log(`The speed is ${this.speed}`);
+        }
+      }
+      const obj=new Car();
+      obj.checkspeed();
+      obj.acc();
+      obj.checkspeed();
+
+      -> getter and setter :- get and set keyword is used , we can define functionaility but it treat like a property,
+
+      --> Tomorrow 
+        static methods and properties , inheritance , for-in , for-of, call , apply , bind 
+         callback , promises and async/await 
+      --> Assignment 
+          -> Create a todo app (with all the crud part)
+
+            To do App 
+               Task : textbox 
+                  Add / Update 
+              S.no  Task   Action 
+              1      A      Delete  Edit 
+              2      B      Delete  Edit 
+         -> static methods and properties :- we define it with static keyword. If we define static methods it cant access by the object of the class. We can access with classname.(Standalone method)
+            class Person{
+                constructor(){
+                  this.name="anuj";
+                }
+                getName(){
+                  return this.name;
+                }
+                static details(){
+                   console.log("Static Method Call")
+                }
+            }
+            Person.details();
+            const obj=new Person();
+            console.log(obj.getName());
+         -> Inheritance :- reusability. To access the base class properties in a child class. extends and super keyword is used to acheive it.
+         eg:
+           class A {
+               abc(){
+                  return "sumit";
+               }
+           }
+           class B extends A {
+             bca(){
+               let x="amit";
+               let y=super.abc();//sumit 
+               console.log(`${x} and ${y} are good friends`);
+             }
+           }
+           const obj=new B();
+           obj.bca();
+
+      --> for in and for of loop 
+        -> for in :- It is used to iterate through the keys of an object.
+            let obj={
+        id:1,
+        age:23,
+        city:'noida'
+       }
+       for(let x in obj){
+        console.log(obj[x])
+       }
+       -> for of loop :- It allows us to iterate over iterable objects like arrays , strings , sets , maps etc.
+        let arr=["a","b","c","d"];
+       for(let elem of arr){
+        console.log(elem)
+       }
+       -> call | apply | bind 
+       -> bind() :- It creates a new function that , when called , has its this leyword set to the provided value.
+        eg:
+          var empdetails={
+              fname:'sumit',
+              lname:'joshi',
+              getFullName:function(){
+                 return this.fname+' '+this.lname
+              }
+          }
+          var detailName=function(){
+             console.log(this.getFullName()+'I choose you!')
+          }
+          var alldetails=detailName.bind(empdetails)
+         -> call() :- method calls a function with a given this value and arguments provided individually and in apply we can pass in array. 
+         -> Callback | Promises | Async Await 
+           --> Callback :- It is a function passed as an argument to another function.These are used for asynchronous operations.A callback function can run after another function has finished.
+           --> COndition | schenerio 
+               -> I want to fetch user details from db in behalf of id 
+               -> in behalf of user details we can fetch the services of the user 
+               -> in half of services we can find the cost of the services 
+            -> nested callback is hardly to manage and avoid this callback hell issue es6 introduced promises.
+         -> Promises :- allow us to write asynchronous code in more manageable ways.
+            -> promises have 3 states 
+               1. pending 
+               2. fullfilled 
+               3. rejected 
+                 -> when we call a promise first it goes to the pending state, after the asynchronous operation perform either it is fulfilled or rejected.
+                   -> promise return only 1 value at a time (either fulfilled or rejected)
+                   -> promise are not cancellable 
+               -> How we create promises 
+                let promise=new Promise((resolve,reject)=>{
+                  let age=22;
+                  setTimeout(()=>{
+                    if(age>=18){
+                      resolved("Elligible")
+                    }
+                    else {
+                       reject("Not Elligible")
+                    }
+                  },3000)
+                })
+                -> How we consume promise 
+                  then() :- for resolved 
+                  catch() :- for reject
+

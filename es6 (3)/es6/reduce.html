@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+
+<body>
+    <h2> Reduce example</h2>
+    <script>
+        const numbers = [1, 2, 3, 4, 5];
+        const sum = numbers.reduce((result, item) => {
+            console.log(`${result}---${item}`)
+            return result + item;
+        }, 0)
+        console.log(sum)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<body>
+    <h2> Get all Posts from JsonPlaceHolder API with fetch method</h2>
+    <div id="target"></div>
+    <script>
+      const API="https://jsonplaceholder.typicode.com/posts";
+      fetch(API)
+      .then(res=> res.json())
+      .then(data=>{
+         let str='';
+         data.forEach((res)=>{
+            str+=`<h3> ${res.title} </h3> <p> ${res.body} </p> <hr/>`
+         })
+         document.getElementById("target").innerHTML=str;
+      })
+      .catch(err=> console.log(err))
+    </script>
+</body>
+</html>

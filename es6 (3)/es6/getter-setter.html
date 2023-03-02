@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<body>
+    <h2> Class getter-setter example</h2>
+    <script>
+     class Person{
+        constructor(name){
+            this._name=name;
+        }
+        get name(){
+            return this._name;
+        }
+        set name(newName){
+            this._name=newName
+        }
+     }
+     const obj=new Person("sumit");
+     console.log(obj.name);//sumit (getter)
+     obj.name="amit"; //(setter)
+     console.log(obj.name);
+    </script>
+</body>
+</html>
